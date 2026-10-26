@@ -13,12 +13,26 @@ const brandFont = Schibsted_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.aigglobalservices.com"),
   title: {
     default: "AIG Global Services | One World. Complete Solutions.",
     template: "%s | AIG Global Services",
   },
   description:
     "Gadgets, homes, autos, exchange, solar installation and industrial machines. Innovative and reliable solutions from AIG Global Services.",
+  openGraph: {
+    type: "website",
+    siteName: "AIG Global Services",
+    locale: "en_NG",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AIG Global Services – One World. Complete Solutions.",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
