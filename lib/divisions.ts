@@ -6,6 +6,7 @@ export type Division = {
   services: string[];
   image: string;
   whatsappMessage: string;
+  website?: string;
 };
 
 export const PHONE = "2347068057446";
@@ -33,6 +34,7 @@ export const divisions: Division[] = [
     ],
     image: "/images/gadgets.jpg",
     whatsappMessage: "Hi AIG Gadgets, I'm interested in a gadget.",
+    website: "https://aiggadgets.com",
   },
   {
     slug: "homes",
