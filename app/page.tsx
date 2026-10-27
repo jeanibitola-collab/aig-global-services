@@ -40,25 +40,31 @@ export default function Home() {
   return (
     <>
      {/* ---------- HERO ---------- */}
-<section className="relative isolate flex min-h-[85vh] items-center overflow-hidden bg-[#071a3a] bg-[url('/images/hero-poster.jpg')] bg-cover bg-center text-white">
-  <video
-    className="absolute inset-0 -z-20 h-full w-full object-cover motion-reduce:hidden"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-    poster="/images/hero-poster.jpg"
-    aria-hidden="true"
-  >
-    <source src="/videos/hero.webm" type="video/webm" />
-    <source src="/videos/hero.mp4" type="video/mp4" />
-  </video>
+<section className="relative isolate overflow-hidden bg-[#071a3a] text-white lg:flex lg:min-h-[85vh] lg:items-center">
+  {/* Video: full-width 16:9 strip on phones, full background on desktop */}
+  <div className="relative aspect-video w-full bg-[url('/images/hero-poster.jpg')] bg-cover bg-center lg:absolute lg:inset-0 lg:-z-20 lg:aspect-auto">
+    <video
+      className="h-full w-full object-cover motion-reduce:hidden"
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      poster="/images/hero-poster.jpg"
+      aria-hidden="true"
+    >
+      <source src="/videos/hero.webm" type="video/webm" />
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
 
-  {/* Dark overlay so the text stays readable */}
-  <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#071a3a]/90 via-[#071a3a]/70 to-[#071a3a]/40" />
+    {/* Phones: soft fade from the video into the navy background */}
+    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-[#071a3a] to-transparent lg:hidden" />
+  </div>
 
-  <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10">
+  {/* Desktop: dark overlay so the text stays readable */}
+  <div className="absolute inset-0 -z-10 hidden bg-linear-to-r from-[#071a3a]/90 via-[#071a3a]/70 to-[#071a3a]/40 lg:block" />
+
+  <div className="mx-auto w-full max-w-7xl px-6 pb-16 pt-4 md:px-10 lg:py-24">
     <div className="max-w-2xl">
       <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm text-white/90 backdrop-blur">
         <Globe className="h-4 w-4 text-green-400" />
