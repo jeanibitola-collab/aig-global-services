@@ -15,6 +15,13 @@ import {
   whatsappLink,
   PHONE_DISPLAY,
 } from "@/lib/divisions";
+import { divisionDetails } from "@/lib/divisionDetails";
+import {
+  Highlights,
+  Listings,
+  Gallery,
+  Faqs,
+} from "@/components/DivisionSections";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -34,15 +41,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const steps = [
   {
     title: "Tell us what you need",
-    text: "Send us a WhatsApp message or give us a call. Share what you're looking for and your budget.",
+    text: "Send us a WhatsApp message or give us a call, and tell us what you're looking for.",
   },
   {
-    title: "Get honest advice and a clear price",
-    text: "Our specialists explain your options in plain language and agree the price with you upfront.",
+    title: "Get clear advice and pricing",
+    text: "Our specialists explain your options in plain language and agree the terms with you upfront.",
   },
   {
-    title: "We deliver and stay with you",
-    text: "From delivery and installation to after-sales support, we remain your point of contact.",
+    title: "We handle it and stay with you",
+    text: "We take care of the details from start to finish, and remain your point of contact afterwards.",
   },
 ];
 
@@ -53,6 +60,7 @@ export default async function DivisionPage({ params }: Props) {
 
   const chat = whatsappLink(d.whatsappMessage);
   const others = divisions.filter((x) => x.slug !== d.slug);
+  const extra = divisionDetails[d.slug] ?? {};
 
   return (
     <>
@@ -156,6 +164,25 @@ export default async function DivisionPage({ params }: Props) {
         </div>
       </section>
 
+      {extra.highlights && extra.highlights.length > 0 && (
+        <Highlights items={extra.highlights} />
+      )}
+
+      {extra.listings && extra.listings.length > 0 && (
+        <Listings
+          title={extra.listingsTitle ?? "Available now"}
+          items={extra.listings}
+          divisionName={d.name}
+        />
+      )}
+
+      {extra.gallery && extra.gallery.length > 0 && (
+        <Gallery
+          title={extra.galleryTitle ?? "Our work"}
+          items={extra.gallery}
+        />
+      )}
+
       {/* ---------- HOW IT WORKS ---------- */}
       <section className="bg-brand-light py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
@@ -185,6 +212,8 @@ export default async function DivisionPage({ params }: Props) {
           </ol>
         </div>
       </section>
+
+      {extra.faqs && extra.faqs.length > 0 && <Faqs items={extra.faqs} />}
 
       {/* ---------- OTHER DIVISIONS ---------- */}
       <section className="py-20 md:py-24">

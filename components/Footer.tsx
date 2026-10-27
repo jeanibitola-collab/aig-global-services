@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { divisions, EMAIL, PHONE_DISPLAY, whatsappLink } from "@/lib/divisions";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Footer() {
   return (
@@ -96,7 +97,9 @@ export default function Footer() {
                 Chat on WhatsApp
               </a>
             </li>
-            <li>Instagram · Facebook · X · LinkedIn: @aigglobalservices</li>
+            <li className="pt-2">
+              <SocialLinks />
+            </li>
           </ul>
         </div>
       </div>
