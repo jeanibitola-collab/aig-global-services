@@ -7,11 +7,13 @@ export const metadata: Metadata = {
     "How AIG Global Services collects, uses and protects your personal data under the Nigeria Data Protection Act 2023.",
 };
 
-// ⚠️ Replace every [bracketed] value with the client's real details before launch
+import { COMPANY as SITE } from "@/lib/site";
+
+// ⚠️ Replace the remaining [bracketed] values before launch
 const COMPANY = {
-  legalName: "[AIG Global Services Limited]",
-  rcNumber: "[RC number]",
-  address: "[Registered office address], Abuja, Nigeria",
+  legalName: SITE.legalName,
+  rcNumber: SITE.rcNumber,
+  address: SITE.offices[0].address,
   email: "info@aigglobalservices.com",
   privacyEmail: "[privacy@aigglobalservices.com]",
   phone: "0706 805 7446",

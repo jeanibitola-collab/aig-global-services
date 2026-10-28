@@ -21,6 +21,7 @@ import {
   Listings,
   Gallery,
   Faqs,
+  Videos,
 } from "@/components/DivisionSections";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -180,7 +181,12 @@ export default async function DivisionPage({ params }: Props) {
         <Gallery
           title={extra.galleryTitle ?? "Our work"}
           items={extra.gallery}
+          aspect={extra.galleryAspect}
         />
+      )}
+
+      {extra.videos && extra.videos.length > 0 && (
+        <Videos title={extra.videosTitle ?? "Watch"} items={extra.videos} />
       )}
 
       {/* ---------- HOW IT WORKS ---------- */}

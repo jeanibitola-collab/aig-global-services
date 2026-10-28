@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ChevronDown, MessageCircle } from "lucide-react";
 import { whatsappLink } from "@/lib/divisions";
-import type { Highlight, GalleryItem, Listing, Faq } from "@/lib/divisionDetails";
+import type { Highlight, GalleryItem, Listing, Faq, VideoItem } from "@/lib/divisionDetails";
 
 const container = "mx-auto max-w-7xl px-6 md:px-10";
 
@@ -95,14 +95,27 @@ export function Listings({
 }
 
 /* ---------- Gallery ---------- */
-export function Gallery({ title, items }: { title: string; items: GalleryItem[] }) {
+export function Gallery({
+  title,
+  items,
+  aspect = "portrait",
+}: {
+  title: string;
+  items: GalleryItem[];
+  aspect?: "portrait" | "landscape";
+}) {
+  const ratio = aspect === "landscape" ? "aspect-[4/3]" : "aspect-[4/5]";
+
   return (
     <section className="py-20 md:py-24">
       <div className={container}>
         <h2 className="text-3xl font-extrabold md:text-4xl">{title}</h2>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((g) => (
-            <figure key={g.image} className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-brand-light">
+            <figure
+              key={g.image}
+              className={`group relative ${ratio} overflow-hidden rounded-2xl bg-brand-light`}
+            >
               <Image
                 src={g.image}
                 alt={g.caption}
@@ -156,6 +169,33 @@ export function Faqs({ items }: { items: Faq[] }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+    </section>
+  );
+}
+
+/* ---------- Videos ---------- */
+export function Videos({ title, items }: { title: string; items: VideoItem[] }) {
+  return (
+    <section className="bg-brand-light py-20 md:py-24">
+      <div className={container}>
+        <h2 className="text-3xl font-extrabold md:text-4xl">{title}</h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((v) => (
+            <figure key={v.src} className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100">
+              <video
+                className="aspect-video w-full bg-black object-contain"
+                controls
+                playsInline
+                preload="none"
+                poster={v.poster}
+              >
+                <source src={v.src} type="video/mp4" />
+              </video>
+              <figcaption className="p-4 text-sm font-semibold">{v.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

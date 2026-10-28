@@ -7,12 +7,14 @@ export const metadata: Metadata = {
   description: "The terms that apply when you use the AIG Global Services website and services.",
 };
 
-// ⚠️ Replace every [bracketed] item before launch
+import { COMPANY as SITE } from "@/lib/site";
+
+// ⚠️ Replace the remaining [bracketed] values before launch
 const TERMS = {
   effectiveDate: "[Date these terms take effect]",
-  legalName: "[Registered company name]",
-  rcNumber: "[RC number]",
-  address: "[Registered office address], Abuja, Nigeria",
+  legalName: SITE.legalName,
+  rcNumber: SITE.rcNumber,
+  address: SITE.offices[0].address,
   email: "info@aigglobalservices.com",
   phone: "0706 805 7446",
 };

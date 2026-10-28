@@ -1,5 +1,6 @@
 export type Highlight = { value: string; label: string };
 export type GalleryItem = { image: string; caption: string };
+export type VideoItem = { src: string; poster: string; caption: string };
 export type Listing = {
   title: string;
   price?: string;
@@ -14,7 +15,10 @@ export type DivisionDetails = {
   listingsTitle?: string;
   listings?: Listing[];
   galleryTitle?: string;
+  galleryAspect?: "portrait" | "landscape";
   gallery?: GalleryItem[];
+  videosTitle?: string;
+  videos?: VideoItem[];
   faqs?: Faq[];
 };
 
@@ -32,8 +36,41 @@ export const divisionDetails: Record<string, DivisionDetails> = {
   gadgets: {
     listingsTitle: "Available now",
     listings: [],
-    galleryTitle: "Recent repairs and setups",
-    gallery: [],
+    galleryTitle: "From our store shelves",
+    gallery: [
+      {
+        image: "/images/gadgets/gadgets-iphone-pro-2.jpg",
+        caption: "The latest iPhones",
+      },
+      {
+        image: "/images/gadgets/gadgets-iphone-fold.jpg",
+        caption: "Foldable iPhones",
+      },
+      {
+        image: "/images/gadgets/gadgets-ipad-11.jpg",
+        caption: "iPad 11, 128GB Wi-Fi",
+      },
+      {
+        image: "/images/gadgets/gadgets-dji-neo-2.jpg",
+        caption: "DJI Neo 2 Fly More Combo drones",
+      },
+      {
+        image: "/images/gadgets/gadgets-dji-osmo-mobile-8p.jpg",
+        caption: "DJI Osmo Mobile 8P gimbals",
+      },
+      {
+        image: "/images/gadgets/gadgets-iphone-pro-1.jpg",
+        caption: "iPhone Pro models",
+      },
+      {
+        image: "/images/gadgets/gadgets-tp-link-extenders.jpg",
+        caption: "TP-Link AC750 Mesh Wi-Fi Extenders",
+      },
+      {
+        image: "/images/gadgets/gadgets-nokia-105.jpg",
+        caption: "Nokia 105 phones",
+      },
+    ],
     highlights: [],
     faqs: [
       {
@@ -76,8 +113,38 @@ export const divisionDetails: Record<string, DivisionDetails> = {
   autos: {
     listingsTitle: "Vehicles available now",
     listings: [],
-    galleryTitle: "Recent deliveries",
-    gallery: [],
+    galleryTitle: "Vehicles we can source for you",
+    galleryAspect: "landscape",
+    gallery: [
+      {
+        image: "/images/autos/autos-howo-box-truck-1.jpg",
+        caption: "HOWO light-duty box truck",
+      },
+      {
+        image: "/images/autos/autos-faw-jk6-1.jpg",
+        caption: "FAW JK6 truck chassis",
+      },
+
+      {
+        image: "/images/autos/autos-faw-box-truck.jpg",
+        caption: "FAW box truck",
+      },
+
+      {
+        image: "/images/autos/autos-faw-jk6-front.jpg",
+        caption: "FAW JK6, front view",
+      },
+
+      {
+        image: "/images/autos/autos-changan-uni-v-1.jpg",
+        caption: "Changan UNI-V sedan",
+      },
+
+      {
+        image: "/images/autos/autos-changan-uni-v-front.jpg",
+        caption: "Changan UNI-V, front view",
+      },
+    ],
     highlights: [],
     faqs: [
       {
@@ -114,8 +181,39 @@ export const divisionDetails: Record<string, DivisionDetails> = {
   },
 
   solar: {
-    galleryTitle: "Recent installations",
-    gallery: [],
+    listingsTitle: "Equipment we install",
+    listings: [
+      {
+        title: "Felicity Solar panels",
+        details: ["Monocrystalline solar panels for homes and businesses"],
+        image: "/images/solar/solar-felicity-panels.jpg",
+      },
+      {
+        title: "Felicity Solar battery",
+        details: ["Energy storage to keep your power running day and night"],
+        image: "/images/solar/solar-felicity-battery.jpg",
+      },
+    ],
+    galleryTitle: "Our past projects",
+    galleryAspect: "landscape",
+    gallery: [
+      {
+        image: "/images/solar/solar-rooftop-array.jpg",
+        caption: "Rooftop solar installation",
+      },
+      {
+        image: "/images/solar/solar-technician-mounting.jpg",
+        caption: "Mounting panels on a residential roof",
+      },
+      {
+        image: "/images/solar/solar-rooftop-tiled-roof.jpg",
+        caption: "Solar installation on a tiled roof",
+      },
+      {
+        image: "/images/solar/solar-street-light.jpg",
+        caption: "Solar street lighting for a residential compound",
+      },
+    ],
     highlights: [],
     faqs: [
       {
@@ -134,8 +232,49 @@ export const divisionDetails: Record<string, DivisionDetails> = {
   },
 
   "industrial-machines": {
-    galleryTitle: "Equipment we've supplied",
-    gallery: [],
+    videosTitle: "See our equipment in action",
+    videos: [
+      {
+        src: "/videos/industrial/industrial-embroidery-4-head-demo.mp4",
+        poster:
+          "/images/industrial/industrial-embroidery-4-head-demo-poster.jpg",
+        caption: "Computerised four-head embroidery machine",
+      },
+      {
+        src: "/videos/industrial/industrial-embroidery-4-head-factory.mp4",
+        poster:
+          "/images/industrial/industrial-embroidery-4-head-factory-poster.jpg",
+        caption: "Four-head embroidery machines",
+      },
+      {
+        src: "/videos/industrial/industrial-embroidery-2-head.mp4",
+        poster: "/images/industrial/industrial-embroidery-2-head-poster.jpg",
+        caption: "Two-head commercial embroidery machine",
+      },
+      {
+        src: "/videos/industrial/industrial-production-line.mp4",
+        poster: "/images/industrial/industrial-production-line-poster.jpg",
+        caption: "Automated production line",
+      },
+      {
+        src: "/videos/industrial/industrial-processing-machinery.mp4",
+        poster: "/images/industrial/industrial-processing-machinery-poster.jpg",
+        caption: "Processing machinery",
+      },
+      {
+        src: "/videos/industrial/industrial-large-format-printer.mp4",
+        poster: "/images/industrial/industrial-large-format-printer-poster.jpg",
+        caption: "Large-format printer",
+      },
+    ],
+    galleryTitle: "Equipment we can supply",
+    galleryAspect: "landscape",
+    gallery: [
+      {
+        image: "/images/industrial/industrial-embroidery-4-head.jpg",
+        caption: "FUJA four-head embroidery machine",
+      },
+    ],
     highlights: [],
     faqs: [
       {

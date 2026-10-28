@@ -23,14 +23,16 @@ export const divisions: Division[] = [
     name: "AIG Gadgets",
     tagline: "Your one-stop shop for premium gadgets and repairs.",
     description:
-      "Original phones, laptops, smartwatches and accessories, plus fast repairs and reliable internet installation, all in one place.",
+      "Mid- to high-end computers, phones, tablets, printers and gaming systems from brands like Apple, HP, Dell and Samsung, plus repairs, IT installation, maintenance agreements and IT training for homes and businesses.",
     services: [
-      "Smartphones & Accessories",
-      "Laptops & Tablets",
-      "Smartwatches & Audio",
-      "Phone, Laptop & Console Repairs",
+      "Computers & Laptops",
+      "Phones & Tablets",
+      "Printers & Ink",
+      "Gaming Consoles & Accessories",
+      "Hardware & Phone Repairs",
+      "IT Installation & Maintenance",
       "Internet Installation",
-      "Swap Deals & Upgrades",
+      "IT Consultancy & Training",
     ],
     image: "/images/gadgets.jpg",
     whatsappMessage: "Hi AIG Gadgets, I'm interested in a gadget.",
@@ -56,12 +58,14 @@ export const divisions: Division[] = [
     name: "AIG Autos",
     tagline: "Quality vehicles. Trusted deals. Total peace of mind.",
     description:
-      "New and foreign-used cars, sourcing, trade-ins and expert advice to help you drive away with confidence.",
+      "New and foreign-used vehicle sales and procurement, plus car diagnostics, servicing and car wash, so we can look after your car long after you drive it away.",
     services: [
       "New & Foreign Used Cars",
       "Car Sales & Procurement",
+      "Car Diagnostics",
+      "Car Servicing",
+      "Car Wash",
       "Trade-ins & Upgrades",
-      "Automobile Advisory",
     ],
     image: "/images/autos.jpg",
     whatsappMessage: "Hi AIG Autos, I'm interested in a car.",
@@ -71,12 +75,12 @@ export const divisions: Division[] = [
     name: "AIG Xchange",
     tagline: "Fast, secure, and reliable exchange solutions.",
     description:
-      "Currency exchange, digital assets and funds transfer at great rates, handled quickly and securely.",
+      "Currency exchange, digital assets and funds transfer at competitive rates, handled quickly and securely.",
     services: [
       "Currency Exchange",
       "Crypto & Digital Assets",
       "Funds Transfer",
-      "Secure & Best Rates",
+      "Secure & Competitive Rates",
     ],
     image: "/images/x.jpg",
     whatsappMessage: "Hi AIG Xchange, I'd like to make an exchange.",
@@ -94,7 +98,8 @@ export const divisions: Division[] = [
       "Sustainable & Cost Effective",
     ],
     image: "/images/solar.jpg",
-    whatsappMessage: "Hi AIG Global Services, I'm interested in solar installation.",
+    whatsappMessage:
+      "Hi AIG Global Services, I'm interested in solar installation.",
   },
   {
     slug: "industrial-machines",
@@ -108,8 +113,9 @@ export const divisions: Division[] = [
       "Maintenance Services",
       "Genuine Parts & Spares",
     ],
-    image: "/images/machines.jpg",
-    whatsappMessage: "Hi AIG Global Services, I'm interested in industrial machines.",
+    image: "/images/industrial/industrial-embroidery-4-head.jpg",
+    whatsappMessage:
+      "Hi AIG Global Services, I'm interested in industrial machines.",
   },
 ];
 
