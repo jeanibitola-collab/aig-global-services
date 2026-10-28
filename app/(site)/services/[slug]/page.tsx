@@ -15,7 +15,7 @@ import {
   whatsappLink,
   PHONE_DISPLAY,
 } from "@/lib/divisions";
-import { divisionDetails } from "@/lib/divisionDetails";
+import { getDivisionContent } from "@/lib/sanityContent";
 import {
   Highlights,
   Listings,
@@ -61,14 +61,14 @@ export default async function DivisionPage({ params }: Props) {
 
   const chat = whatsappLink(d.whatsappMessage);
   const others = divisions.filter((x) => x.slug !== d.slug);
-  const extra = divisionDetails[d.slug] ?? {};
+  const { details: extra, mainImage } = await getDivisionContent(d.slug);
 
   return (
     <>
       {/* ---------- BANNER ---------- */}
       <section className="relative isolate overflow-hidden bg-[#071a3a] text-white">
         <Image
-          src={d.image}
+          src={mainImage ?? d.image}
           alt={d.name}
           fill
           priority

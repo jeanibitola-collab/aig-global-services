@@ -1,6 +1,6 @@
 export type Highlight = { value: string; label: string };
 export type GalleryItem = { image: string; caption: string };
-export type VideoItem = { src: string; poster: string; caption: string };
+export type VideoItem = { src: string; poster?: string; caption: string };
 export type Listing = {
   title: string;
   price?: string;

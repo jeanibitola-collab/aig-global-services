@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getMainImages } from "@/lib/sanityContent";
 import {
   Smartphone,
   Home as HomeIcon,
@@ -55,7 +56,9 @@ const enquiry = whatsappLink(
   "Hi AIG Global Services, I'd like to make an enquiry.",
 );
 
-export default function Home() {
+export default async function Home() {
+  const mainImages = await getMainImages();
+
   return (
     <>
       {/* ---------- HERO ---------- */}
@@ -173,7 +176,7 @@ export default function Home() {
                   <div className="relative h-48">
                     <div className="absolute inset-0 overflow-hidden">
                       <Image
-                        src={d.image}
+                        src={mainImages[d.slug] ?? d.image}
                         alt={d.name}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
