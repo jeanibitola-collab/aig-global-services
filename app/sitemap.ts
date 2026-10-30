@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { divisions } from "@/lib/divisions";
 
-const SITE_URL = "https://www.aig-global-services.vercel.app";
+const SITE_URL = "https://www.aigglobalservices.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

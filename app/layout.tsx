@@ -9,7 +9,7 @@ const brandFont = Schibsted_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aig-global-services.vercel.app"),
+  metadataBase: new URL("https://www.aigglobalservices.com"),
   title: {
     default: "AIG Global Services | One World. Complete Solutions.",
     template: "%s | AIG Global Services",

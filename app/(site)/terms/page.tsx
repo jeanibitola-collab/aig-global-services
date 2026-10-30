@@ -15,7 +15,7 @@ const TERMS = {
   legalName: SITE.legalName,
   rcNumber: SITE.rcNumber,
   address: SITE.offices[0].address,
-  email: "info@aigglobalservices.com",
+  email: "aigglobalservices@gmail.com",
   phone: "0706 805 7446",
 };
 

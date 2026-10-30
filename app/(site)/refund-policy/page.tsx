@@ -14,7 +14,7 @@ const POLICY = {
   repairWarrantyDays: "[30]", // warranty on repair work
   responseDays: "[3]", // working days to respond to a refund request
   refundDays: "[14]", // working days to process an approved refund
-  email: "info@aigglobalservices.com",
+  email: "aigglobalservices@gmail.com",
   phone: "0706 805 7446",
 };
 

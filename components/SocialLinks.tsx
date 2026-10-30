@@ -1,11 +1,9 @@
-import { FaInstagram, FaFacebookF, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
+import { FaInstagram, FaFacebookF} from "react-icons/fa6";
 import { COMPANY } from "@/lib/site";
 
 const networks = [
   { key: "instagram", label: "Instagram", Icon: FaInstagram },
   { key: "facebook", label: "Facebook", Icon: FaFacebookF },
-  { key: "x", label: "X (Twitter)", Icon: FaXTwitter },
-  { key: "linkedin", label: "LinkedIn", Icon: FaLinkedinIn },
 ] as const;
 
 export default function SocialLinks() {
@@ -13,7 +11,7 @@ export default function SocialLinks() {
 
   // Until links are added, show the handle as text
   if (items.length === 0) {
-    return <p className="text-sm">Instagram · Facebook · X · LinkedIn: @aigglobalservices</p>;
+    return <p className="text-sm">Instagram · Facebook ·</p>;
   }
 
   return (

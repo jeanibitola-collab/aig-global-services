@@ -11,7 +11,7 @@ export type Division = {
 
 export const PHONE = "2347068057446";
 export const PHONE_DISPLAY = "0706 805 7446";
-export const EMAIL = "info@aigglobalservices.com";
+export const EMAIL = "aigglobalservices@gmail.com";
 
 export function whatsappLink(message: string) {
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
